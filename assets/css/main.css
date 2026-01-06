@@ -385,6 +385,7 @@ body.nav-open .nav-overlay {
   box-shadow: var(--shadow);
 }
 
+.post-card h2,
 .post-card h3 {
   margin: 10px 0 8px;
   font-family: var(--display);

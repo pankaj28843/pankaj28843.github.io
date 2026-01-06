@@ -13,7 +13,7 @@ permalink: /projects/
       {% if project %}
         <a class="post-card" href="{{ project.url | relative_url }}">
           <span class="tag">{{ project.status }}</span>
-          <h3>{{ project.title }}</h3>
+          <h2>{{ project.title }}</h2>
           <p class="post-meta">{{ entry.highlight }}</p>
           <p>{{ project.description }}</p>
         </a>
