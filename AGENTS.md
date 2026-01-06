@@ -9,6 +9,7 @@ This is a Jekyll-based blog.
 - `assets/css/` contains stylesheets (start with `assets/css/main.css`).
 - `assets/js/` contains lightweight UI scripts (navigation and search).
 - `_data/navigation.yml` defines the top navigation.
+- Footer links live in `_includes/footer.html` for secondary pages (Projects/Uses/Colophon).
 - `.github/workflows/pages.yml` builds and deploys to GitHub Pages.
 
 ## Build, Test, and Development Commands
@@ -23,7 +24,7 @@ Indent with 2 spaces in YAML and HTML. Use lowercase with hyphens for filenames 
 
 ## Testing Guidelines
 There is no automated test suite. Use `bundle exec jekyll build` to validate the site renders without errors. For visual checks, compare `index.html` and recent posts in the browser.
-When changing layout or navigation, capture fresh mobile/tablet/desktop screenshots.
+When changing layout or navigation, capture fresh mobile/tablet/desktop screenshots and include the nav drawer state.
 
 ## Commit & Pull Request Guidelines
 Use Conventional Commits (`feat:`, `fix:`, `docs:`). Pull requests should include:
