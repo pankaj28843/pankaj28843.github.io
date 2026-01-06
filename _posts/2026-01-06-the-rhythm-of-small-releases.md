@@ -2,7 +2,8 @@
 layout: post
 title: "The Rhythm of Small Releases"
 categories: [Practice]
-tags: [shipping, product, cadence]
+tags: [shipping, product, cadence, workflow]
+series: "Field Notes Foundations"
 ---
 
 Shipping is a habit. When the release size is small, you can stay close to the
