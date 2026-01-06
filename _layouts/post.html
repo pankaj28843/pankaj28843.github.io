@@ -5,5 +5,13 @@ layout: default
 <section class="shell content">
   <p class="post-meta">{{ page.date | date: "%B %d, %Y" }}</p>
   <h1>{{ page.title }}</h1>
+  <div class="pill-row">
+    {% for category in page.categories %}
+      <span class="pill outline">{{ category }}</span>
+    {% endfor %}
+    {% for tag in page.tags %}
+      <span class="pill">{{ tag }}</span>
+    {% endfor %}
+  </div>
   {{ content }}
 </section>

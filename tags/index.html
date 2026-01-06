@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Tags"
+---
+
+<section class="shell content">
+  <h1>Tags</h1>
+  <p>Explore topics across the archive.</p>
+  <div class="pill-grid">
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+      {% assign tag_name = tag[0] %}
+      {% assign tag_posts = tag[1] %}
+      <a class="pill" href="{{ "/tags/" | append: tag_name | slugify | append: "/" | relative_url }}">
+        {{ tag_name }} <span class="pill-count">{{ tag_posts | size }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

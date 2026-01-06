@@ -2,6 +2,7 @@
 layout: post
 title: "The Rhythm of Small Releases"
 categories: [Practice]
+tags: [shipping, product, cadence]
 ---
 
 Shipping is a habit. When the release size is small, you can stay close to the

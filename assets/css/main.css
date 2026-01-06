@@ -280,6 +280,89 @@ img {
   font-weight: 600;
 }
 
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(201, 107, 75, 0.16);
+  color: var(--accent-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pill.outline {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+.pill-count {
+  background: rgba(29, 27, 22, 0.1);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+}
+
+.taxonomy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  background: #fff8ee;
+}
+
+.search-results {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.search-card {
+  background: rgba(255, 248, 238, 0.85);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+}
+
+.search-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+}
+
+.pill-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;

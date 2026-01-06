@@ -11,6 +11,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/page:num/"
+
+excerpt_separator: "<!--more-->"
 
 author:
   name: "Pankaj"

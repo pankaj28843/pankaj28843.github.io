@@ -26,7 +26,12 @@ title: "Home"
 <section class="shell">
   <h2 class="section-title">Latest entries</h2>
   <div class="post-grid">
-    {% for post in site.posts limit:6 %}
+    {% if paginator %}
+      {% assign feed_posts = paginator.posts %}
+    {% else %}
+      {% assign feed_posts = site.posts %}
+    {% endif %}
+    {% for post in feed_posts %}
       <a class="post-card" href="{{ post.url | relative_url }}">
         <span class="tag">{{ post.categories | first | default: "Essay" }}</span>
         <h3>{{ post.title }}</h3>
@@ -35,4 +40,16 @@ title: "Home"
       </a>
     {% endfor %}
   </div>
+
+  {% if paginator and paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a class="button secondary" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Newer</a>
+      {% endif %}
+      <span class="post-meta">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a class="button secondary" href="{{ paginator.next_page_path | relative_url }}">Older &raquo;</a>
+      {% endif %}
+    </div>
+  {% endif %}
 </section>

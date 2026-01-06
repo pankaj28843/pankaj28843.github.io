@@ -2,6 +2,7 @@
 layout: post
 title: "Welcome to Field Notes"
 categories: [Essay]
+tags: [writing, craft, systems]
 ---
 
 This is a living sketchbook for how I work. I am interested in the quiet moments

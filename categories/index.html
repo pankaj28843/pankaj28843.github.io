@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Categories"
+---
+
+<section class="shell content">
+  <h1>Categories</h1>
+  <p>Browse the major themes of the blog.</p>
+  <div class="pill-grid">
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+      {% assign category_name = category[0] %}
+      {% assign category_posts = category[1] %}
+      <a class="pill" href="{{ "/categories/" | append: category_name | slugify | append: "/" | relative_url }}">
+        {{ category_name }} <span class="pill-count">{{ category_posts | size }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
