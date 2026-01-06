@@ -11,7 +11,8 @@ title: "Categories"
     {% for category in sorted_categories %}
       {% assign category_name = category[0] %}
       {% assign category_posts = category[1] %}
-      <a class="pill" href="{{ "/categories/" | append: category_name | slugify | append: "/" | relative_url }}">
+      {% assign category_slug = category_name | slugify %}
+      <a class="pill" href="{{ "/categories/" | append: category_slug | append: "/" | relative_url }}">
         {{ category_name }} <span class="pill-count">{{ category_posts | size }}</span>
       </a>
     {% endfor %}

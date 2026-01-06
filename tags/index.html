@@ -11,7 +11,8 @@ title: "Tags"
     {% for tag in sorted_tags %}
       {% assign tag_name = tag[0] %}
       {% assign tag_posts = tag[1] %}
-      <a class="pill" href="{{ "/tags/" | append: tag_name | slugify | append: "/" | relative_url }}">
+      {% assign tag_slug = tag_name | slugify %}
+      <a class="pill" href="{{ "/tags/" | append: tag_slug | append: "/" | relative_url }}">
         {{ tag_name }} <span class="pill-count">{{ tag_posts | size }}</span>
       </a>
     {% endfor %}

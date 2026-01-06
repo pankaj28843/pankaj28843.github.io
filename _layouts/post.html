@@ -16,17 +16,18 @@ layout: default
   {{ content }}
 
   {% if page.series %}
-    <hr>
-    <h2>Series: {{ page.series }}</h2>
-    <ul class="taxonomy-list">
-      {% assign series_posts = site.posts | where: "series", page.series %}
-      {% for post in series_posts %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span class="post-meta"> — {{ post.date | date: "%B %d, %Y" }}</span>
-        </li>
-      {% endfor %}
-    </ul>
+    <div class="post-panel">
+      <h2>Series: {{ page.series }}</h2>
+      <ul class="taxonomy-list">
+        {% assign series_posts = site.posts | where: "series", page.series %}
+        {% for post in series_posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-meta"> — {{ post.date | date: "%B %d, %Y" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
 
   {% if page.tags %}
@@ -46,19 +47,21 @@ layout: default
     {% endfor %}
 
     {% if related.size > 0 %}
-      <hr>
-      <h2>Related posts</h2>
-      <ul class="taxonomy-list">
-        {% for post in related limit:3 %}
-          <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="post-meta"> — {{ post.date | date: "%B %d, %Y" }}</span>
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="post-panel">
+        <h2>Related posts</h2>
+        <ul class="taxonomy-list">
+          {% for post in related limit:3 %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="post-meta"> — {{ post.date | date: "%B %d, %Y" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% else %}
-      <hr>
-      <p class="post-meta">More related posts coming soon.</p>
+      <div class="post-panel">
+        <p class="post-meta">More related posts coming soon.</p>
+      </div>
     {% endif %}
   {% endif %}
 </section>

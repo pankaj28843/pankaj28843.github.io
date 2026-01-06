@@ -8,6 +8,31 @@ title: "Search"
   <p>Find posts by title, tag, or excerpt.</p>
   <input id="search-input" class="search-input" type="search" placeholder="Search the archive..." autocomplete="off">
   <div id="search-results" class="search-results"></div>
+
+  <div class="search-suggestions">
+    <h2>Popular tags</h2>
+    <div class="pill-grid">
+      {% assign tag_pairs = site.tags | sort %}
+      {% for tag in tag_pairs limit:10 %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        {% assign tag_slug = tag_name | slugify %}
+        <a class="pill" href="{{ "/tags/" | append: tag_slug | append: "/" | relative_url }}">
+          {{ tag_name }} <span class="pill-count">{{ tag_posts | size }}</span>
+        </a>
+      {% endfor %}
+    </div>
+
+    <h2>Recent posts</h2>
+    <ul class="taxonomy-list">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-meta"> — {{ post.date | date: "%B %d, %Y" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <script src="{{ "/assets/js/search.js" | relative_url }}"></script>

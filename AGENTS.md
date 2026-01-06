@@ -7,6 +7,7 @@ This is a Jekyll-based blog.
 - `_includes/` stores shared pieces like `header.html` and `footer.html`.
 - `_posts/` contains blog posts named `YYYY-MM-DD-title.md`.
 - `assets/css/` contains stylesheets (start with `assets/css/main.css`).
+- `assets/js/` contains lightweight UI scripts (navigation and search).
 - `_data/navigation.yml` defines the top navigation.
 - `.github/workflows/pages.yml` builds and deploys to GitHub Pages.
 
@@ -15,12 +16,14 @@ Use Bundler to run Jekyll locally.
 - `bundle install` — install Ruby gems.
 - `bundle exec jekyll serve` — run the site locally at `http://127.0.0.1:4000`.
 - `bundle exec jekyll build` — build the static site into `_site/`.
+Use `bundle exec jekyll serve --livereload` for rapid UI iteration.
 
 ## Coding Style & Naming Conventions
 Indent with 2 spaces in YAML and HTML. Use lowercase with hyphens for filenames (example: `_posts/2026-01-06-welcome.md`). Keep CSS in `assets/css/main.css` and prefer descriptive class names tied to layout sections.
 
 ## Testing Guidelines
 There is no automated test suite. Use `bundle exec jekyll build` to validate the site renders without errors. For visual checks, compare `index.html` and recent posts in the browser.
+When changing layout or navigation, capture fresh mobile/tablet/desktop screenshots.
 
 ## Commit & Pull Request Guidelines
 Use Conventional Commits (`feat:`, `fix:`, `docs:`). Pull requests should include:
