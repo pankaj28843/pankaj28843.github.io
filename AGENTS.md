@@ -27,6 +27,7 @@ Indent with 2 spaces in YAML and HTML. Use lowercase with hyphens for filenames 
 There is no automated test suite. Use `bundle exec jekyll build` to validate the site renders without errors. For visual checks, compare `index.html` and recent posts in the browser.
 When changing layout or navigation, capture fresh mobile/tablet/desktop screenshots and include the nav drawer state.
 For tight mobile layout debugging, run `bundle exec jekyll serve` and use the Playwright MCP server to open `http://127.0.0.1:4000` at small portrait viewports (e.g., 320x568), then take full-page and footer screenshots to verify `scrollWidth` equals `clientWidth`.
+For theme and accessibility work, use this proven workflow: 1) run `bundle exec jekyll serve --detach`, 2) use Playwright MCP to capture light/dark screenshots across home/post/projects/uses at desktop and 320x568 mobile, 3) run Playwright DOM heuristics for missing `alt`, unlabeled buttons/links/inputs, 4) run Lighthouse locally and against GitHub Pages with `npx -y lighthouse <url> --output=json --output-path=/tmp/lh-<name>.json --form-factor=mobile --chrome-path=/usr/bin/google-chrome --chrome-flags="--headless=new --no-sandbox"` and `--preset=desktop`, 5) fix common issues (heading order by promoting card titles to `h2`, contrast by adjusting text color on accent buttons), 6) re-run Lighthouse on affected pages, 7) stop the dev server with `kill <pid>`.
 
 Planned maintenance: enable Dependabot for Ruby gems and create labels such as `dependencies`, `security`, and `build` to keep updates organized.
 
