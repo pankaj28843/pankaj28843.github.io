@@ -1,0 +1,35 @@
+# Repository Guidelines
+
+## Project Structure & Module Organization
+This is a Jekyll-based blog.
+- `_config.yml` holds site metadata, plugins, and permalink settings.
+- `_layouts/` defines the base templates (e.g., `default.html`, `post.html`).
+- `_includes/` stores shared pieces like `header.html` and `footer.html`.
+- `_posts/` contains blog posts named `YYYY-MM-DD-title.md`.
+- `assets/css/` contains stylesheets (start with `assets/css/main.css`).
+- `_data/navigation.yml` defines the top navigation.
+- `.github/workflows/pages.yml` builds and deploys to GitHub Pages.
+
+## Build, Test, and Development Commands
+Use Bundler to run Jekyll locally.
+- `bundle install` — install Ruby gems.
+- `bundle exec jekyll serve` — run the site locally at `http://127.0.0.1:4000`.
+- `bundle exec jekyll build` — build the static site into `_site/`.
+
+## Coding Style & Naming Conventions
+Indent with 2 spaces in YAML and HTML. Use lowercase with hyphens for filenames (example: `_posts/2026-01-06-welcome.md`). Keep CSS in `assets/css/main.css` and prefer descriptive class names tied to layout sections.
+
+## Testing Guidelines
+There is no automated test suite. Use `bundle exec jekyll build` to validate the site renders without errors. For visual checks, compare `index.html` and recent posts in the browser.
+
+## Commit & Pull Request Guidelines
+Use Conventional Commits (`feat:`, `fix:`, `docs:`). Pull requests should include:
+- A short summary of the change.
+- Confirmation of `bundle exec jekyll build`.
+- Screenshots for layout or styling updates.
+
+## Security & Configuration Tips
+Do not commit secrets. If local config is needed, add it to `.gitignore` and document the expected keys in `README.md`.
+
+## Agent-Specific Instructions
+When you add plugins or workflows, update `_config.yml` and this file to keep commands and structure accurate.

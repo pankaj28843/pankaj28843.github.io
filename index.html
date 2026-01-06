@@ -1,0 +1,38 @@
+---
+layout: default
+title: "Home"
+---
+
+<section class="shell hero">
+  <div class="hero-copy">
+    <p class="tag">Personal Blog</p>
+    <h1>Field notes on building thoughtful software and calmer product craft.</h1>
+    <p>{{ site.description }}</p>
+    <div class="hero-actions">
+      <a class="button primary" href="{{ "/archive/" | relative_url }}">Read the archive</a>
+      <a class="button secondary" href="{{ "/about/" | relative_url }}">About this blog</a>
+    </div>
+  </div>
+  <aside class="hero-card">
+    <h3>What I am writing about</h3>
+    <ul>
+      <li>Design decisions that scale with teams.</li>
+      <li>Engineering rituals that keep quality high.</li>
+      <li>Learning sprints, experiments, and retros.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="shell">
+  <h2 class="section-title">Latest entries</h2>
+  <div class="post-grid">
+    {% for post in site.posts limit:6 %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <span class="tag">{{ post.categories | first | default: "Essay" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>

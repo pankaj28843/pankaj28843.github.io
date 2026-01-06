@@ -1,0 +1,32 @@
+title: "Pankaj's Field Notes"
+description: "A personal blog on building, design, and gentle experiments." 
+url: "https://pankaj28843.github.io"
+baseurl: ""
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+author:
+  name: "Pankaj"
+  email: ""
+
+social:
+  name: "Pankaj"
+  links:
+    - "https://github.com/pankaj28843"
+
+collections:
+  pages:
+    output: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

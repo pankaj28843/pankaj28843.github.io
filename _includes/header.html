@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="shell">
+    <a class="logo" href="{{ "/" | relative_url }}">
+      <span class="logo-mark">◎</span>
+      <span class="logo-text">{{ site.title }}</span>
+    </a>
+    <nav class="site-nav">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.url | relative_url }}" class="nav-link">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
