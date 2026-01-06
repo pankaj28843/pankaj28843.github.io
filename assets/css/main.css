@@ -4,6 +4,7 @@
   --ink-soft: #4a4237;
   --accent: #c96b4b;
   --accent-deep: #8a3f2c;
+  --accent-ink: #1d1b16;
   --accent-glow: rgba(201, 107, 75, 0.18);
   --accent-glow-strong: rgba(138, 63, 44, 0.22);
   --card: #fff8ee;
@@ -38,6 +39,7 @@
   --ink-soft: #c7beb2;
   --accent: #d6754b;
   --accent-deep: #f0a98c;
+  --accent-ink: #0f1110;
   --accent-glow: rgba(214, 117, 75, 0.2);
   --accent-glow-strong: rgba(240, 169, 140, 0.22);
   --card: #151716;
@@ -69,6 +71,7 @@
     --ink-soft: #c7beb2;
     --accent: #d6754b;
     --accent-deep: #f0a98c;
+    --accent-ink: #0f1110;
     --accent-glow: rgba(214, 117, 75, 0.2);
     --accent-glow-strong: rgba(240, 169, 140, 0.22);
     --card: #151716;
@@ -319,7 +322,7 @@ body.nav-open .nav-overlay {
 
 .button.primary {
   background: var(--accent);
-  color: #fff8ee;
+  color: var(--accent-ink);
   box-shadow: var(--shadow);
 }
 
@@ -342,7 +345,7 @@ body.nav-open .nav-overlay {
   border: 1px solid var(--hero-card-border);
 }
 
-.hero-card h3 {
+.hero-card h2 {
   margin: 0 0 14px;
   font-family: var(--display);
   font-size: 1.4rem;
