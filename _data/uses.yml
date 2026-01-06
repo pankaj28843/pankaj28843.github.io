@@ -1,0 +1,18 @@
+- category: "Writing"
+  items:
+    - name: "Markdown"
+      note: "Drafts and outlines"
+    - name: "Jekyll"
+      note: "Static publishing"
+- category: "Engineering"
+  items:
+    - name: "GitHub"
+      note: "Source control and reviews"
+    - name: "Terminal workflows"
+      note: "Lightweight automation"
+- category: "Design"
+  items:
+    - name: "Figma"
+      note: "Exploration and prototypes"
+    - name: "Custom CSS"
+      note: "Final polish"

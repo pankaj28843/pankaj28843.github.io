@@ -30,6 +30,10 @@ social:
 collections:
   pages:
     output: true
+  projects:
+    output: true
+  uses:
+    output: true
 
 exclude:
   - README.md

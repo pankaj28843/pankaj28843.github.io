@@ -53,3 +53,17 @@ title: "Home"
     </div>
   {% endif %}
 </section>
+
+<section class="shell">
+  <h2 class="section-title">Explore topics</h2>
+  <div class="pill-grid">
+    {% assign tag_pairs = site.tags | sort %}
+    {% for tag in tag_pairs limit:10 %}
+      {% assign tag_name = tag[0] %}
+      {% assign tag_slug = tag_name | slugify %}
+      <a class="pill" href="{{ "/tags/" | append: tag_slug | append: "/" | relative_url }}">
+        {{ tag_name }}
+      </a>
+    {% endfor %}
+  </div>
+</section>

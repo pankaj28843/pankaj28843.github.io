@@ -7,19 +7,24 @@ permalink: /uses/
 <section class="shell content">
   <h1>Uses</h1>
   <p>Tools and defaults that keep me focused. This is a living list.</p>
-  <h2>Writing</h2>
-  <ul>
-    <li>Markdown for drafts and outlines.</li>
-    <li>Jekyll + GitHub Pages for the blog.</li>
-  </ul>
-  <h2>Engineering</h2>
-  <ul>
-    <li>GitHub for source control and review.</li>
-    <li>Terminal-first workflow with lightweight automation.</li>
-  </ul>
-  <h2>Design</h2>
-  <ul>
-    <li>Figma for exploration and quick UI prototypes.</li>
-    <li>Custom CSS systems for the final polish.</li>
+
+  {% for group in site.data.uses %}
+    <h2>{{ group.category }}</h2>
+    <ul>
+      {% for item in group.items %}
+        <li><strong>{{ item.name }}</strong> — {{ item.note }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+  <h2>Library</h2>
+  <p class="post-meta">Extended notes are collected below.</p>
+  <ul class="taxonomy-list">
+    {% for doc in site.uses %}
+      <li>
+        <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+        <span class="post-meta"> — {{ doc.category }}</span>
+      </li>
+    {% endfor %}
   </ul>
 </section>

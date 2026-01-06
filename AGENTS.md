@@ -6,6 +6,7 @@ This is a Jekyll-based blog.
 - `_layouts/` defines the base templates (e.g., `default.html`, `post.html`).
 - `_includes/` stores shared pieces like `header.html` and `footer.html`.
 - `_posts/` contains blog posts named `YYYY-MM-DD-title.md`.
+- `_projects/` and `_uses/` are collections for long-form project and uses notes.
 - `assets/css/` contains stylesheets (start with `assets/css/main.css`).
 - `assets/js/` contains lightweight UI scripts (navigation and search).
 - `_data/navigation.yml` defines the top navigation.
@@ -25,6 +26,8 @@ Indent with 2 spaces in YAML and HTML. Use lowercase with hyphens for filenames 
 ## Testing Guidelines
 There is no automated test suite. Use `bundle exec jekyll build` to validate the site renders without errors. For visual checks, compare `index.html` and recent posts in the browser.
 When changing layout or navigation, capture fresh mobile/tablet/desktop screenshots and include the nav drawer state.
+
+Planned maintenance: enable Dependabot for Ruby gems and create labels such as `dependencies`, `security`, and `build` to keep updates organized.
 
 ## Commit & Pull Request Guidelines
 Use Conventional Commits (`feat:`, `fix:`, `docs:`). Pull requests should include:

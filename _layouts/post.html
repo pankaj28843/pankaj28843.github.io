@@ -3,7 +3,11 @@ layout: default
 ---
 
 <section class="shell content">
-  <p class="post-meta">{{ page.date | date: "%B %d, %Y" }}</p>
+  <p class="post-meta">
+    {{ page.date | date: "%B %d, %Y" }}
+    {% if page.updated %} · Updated {{ page.updated | date: "%B %d, %Y" }}{% endif %}
+    · {{ content | reading_time }}
+  </p>
   <h1>{{ page.title }}</h1>
   <div class="pill-row">
     {% for category in page.categories %}
@@ -13,6 +17,14 @@ layout: default
       <span class="pill">{{ tag }}</span>
     {% endfor %}
   </div>
+  {% if page.toc %}
+    <div class="post-panel">
+      <h2>On this page</h2>
+      <div class="toc">
+        {{ content | toc_only }}
+      </div>
+    </div>
+  {% endif %}
   {{ content }}
 
   {% if page.series %}
