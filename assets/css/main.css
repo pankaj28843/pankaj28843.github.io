@@ -262,7 +262,7 @@ body.nav-open .nav-overlay {
 }
 
 .page {
-  padding: 64px 0 96px;
+  padding: 52px 0 88px;
 }
 
 .hero {
@@ -641,7 +641,7 @@ body.nav-open .nav-overlay {
 
 @media (max-width: 600px) {
   .page {
-    padding: 40px 0 64px;
+    padding: 32px 0 56px;
   }
 
   .content {
