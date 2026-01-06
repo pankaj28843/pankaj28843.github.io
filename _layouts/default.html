@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description }}">
+    <script>
+      (function() {
+        try {
+          var storedTheme = localStorage.getItem("theme");
+          if (storedTheme === "light" || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", storedTheme);
+          }
+        } catch (error) {
+          // no-op
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <link rel="icon" href="{{ "/assets/img/favicon.svg" | relative_url }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
